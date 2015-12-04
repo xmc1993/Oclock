@@ -15,4 +15,21 @@
         <param-value>classpath*:config/spring/appcontext-*.xml</param-value>
     </context-param>
 
+    <!-- 配置使用mvc框架 -->
+    <servlet>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:config/spring/appcontext-core.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!-- 如果不使用spring-mvc框架那么就会有多个Servlet就需要配置多个Servlet现在spring-mvc仅仅使用一个servlet其他的任务交给其他组件-->
+    <servlet-mapping>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
