@@ -13,15 +13,23 @@
        <!--配置自动扫描的包 -->
        <!--配置了后面的 component-scan 就不需要配置这个 annotation-config-->
        <context:annotation-config/>
-       <context:component-scan base-package="com.xmc"/>
+       <context:component-scan base-package="com.xmc.*"/>
        <!--基于@AspectJ风格的切面声明-->
        <!--<aop:aspectj-autoproxy proxy-target-class="true"/>-->
+
        <mvc:annotation-driven/>
 
         <mvc:default-servlet-handler/>
         <!-- 处理对静态资源的请求-->
         <mvc:resources mapping="/staticSource/**" location="/staticSource/" />
 
-        <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
+        <!-- 处理器映射器 -->
+        <!--<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>-->
+
+        <!-- 视图解析器 -->
+        <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+            <property name="prefix" value="/"></property>
+            <property name="suffix" value=".jsp"></property>
+        </bean>
 
 </beans>
