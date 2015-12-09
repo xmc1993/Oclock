@@ -8,13 +8,13 @@
          version="3.1">
   <display-name>Archetype Created Web Application</display-name>
 
-    <!--classpath*:config/spring/local/appcontext-*.xml,-->
-    <!--classpath*:config/spring/common/appcontext-*.xml-->
+    <!-- 为ContextLoaderListener配置相应需要加载的配置文件路径 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
             classpath:config/spring/appcontext-base.xml
-            classpath:config/spring/appcontext-db.xml
+            classpath:config/spring/appcontext-mybatis.xml
+            classpath:config/spring/appcontext-otherbeans.xml
         </param-value>
     </context-param>
 

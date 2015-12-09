@@ -7,4 +7,7 @@
 
        <context:component-scan base-package="com.xmc.*"/>
 
+       <!-- 引入jdbc配置文件 -->
+       <context:property-placeholder location="classpath:config/property/jdbc.properties"/>
+
 </beans>
