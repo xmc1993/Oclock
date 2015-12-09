@@ -13,7 +13,7 @@
        <!--配置自动扫描的包 -->
        <!--配置了后面的 component-scan 就不需要配置这个 annotation-config-->
        <context:annotation-config/>
-       <context:component-scan base-package="com.xmc.*"/>
+       <context:component-scan base-package="com.xmc.controller"/>
        <!--基于@AspectJ风格的切面声明-->
        <!--<aop:aspectj-autoproxy proxy-target-class="true"/>-->
 
